@@ -2,9 +2,9 @@ name: CI/CD with Vercel
 
 on:
   push:
-    branches: ["main"]
+    branches: ["dev"]
   pull_request:
-    branches: ["main"]
+    branches: ["dev", "main"]
 
 jobs:
   build_and_test:
@@ -30,7 +30,6 @@ jobs:
 
       - name: Run Tests
         run: npm test --if-present
-
 
       - name: Build Project
         run: npm run build
